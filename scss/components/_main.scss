@@ -1,26 +1,132 @@
 // Main
 
+@-moz-viewport { width: device-width; scale: 1; }
+@-ms-viewport { width: device-width; scale: 1; }
+@-o-viewport { width: device-width; scale: 1; }
+@-webkit-viewport { width: device-width; scale: 1; }
+@viewport { width: device-width; scale: 1; }
+
+html {
+	box-sizing: border-box;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
 body{
-	background-color: $background;
-	font-family: $helvetica;
+	background: rgba(0, 0, 0, 0) url("../img/butchery-image.jpg") no-repeat center top;
+	background-size: cover;
 }
 
-.primary-btn{
-	@include button ($primary, $primary-dark, #fff);
-}
+h1{
+	font-family: $montserrat;
+	color: $inverted;
+    font-size: 1.7rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-top: 3rem;
+ }
 
-.secondary-btn{
-	@include button($secondary, $secondary-dark, #fff)
-}
+ h2{
+ 	font-family: $opensans;
+ 	color: $inverted;
+ 	letter-spacing: 1px;
+ 	font-size: .9rem;
+ 	text-align: center;
+ }
 
-.border{
-	border: 1px solid #ccc;
-	// you can nest elements/selectors to target them more specifically
+ h3{
+ 	font-size: 1rem;
+ 	letter-spacing: 5px;
+ 	font-family: $montserrat;
+ 	text-transform: uppercase;
+
+ }
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
 	p{
-		color: lightblue;
+		padding-bottom: 2rem;
 	}
 }
 
+li{
+	@include icons ($inverted, $icon);
+
+	i{
+		@include hover;
+	}
+}
+
+.icon-section{
+	padding: 3rem 4rem;
+}
+
+.small-border{
+    display: block;
+    width: 30px;
+    height: 3.5px;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: -5px;
+    margin-bottom: 10px;
+
+}
+
+@media only screen and (min-width: 40em) {
+
+h1{
+	font-size: 2.2rem;
+	letter-spacing: 9px;
+}
+
+h2{
+	font-size: 1.1rem;
+}
+
+.about{
+	padding: 2rem;
+	width: 50%;
+	float: left;
+}
+}
+
+@media only screen and (min-width: 60em) {
+
+.about{
+	width: 40%;
+}
+
 ul{
-	@extend .border;
+	margin-left: 15%;
+}
+}
+
+@media only screen and (min-width: 80em) {
+
+h1{
+	padding-top: 5rem;
+}
+
+h2{
+	padding-bottom: 3rem;
+}
+
+.about{
+	width: 25%;
+	float: left;
+}
+
+ul{
+	margin: 0;
+}
 }
